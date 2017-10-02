@@ -105,7 +105,7 @@ int Solve_Square ( double a, double b, double c, double* x1, double* x2)
 void unitest ()
 {
 
-    double test[3][6] {{0, 0, 0, 0, 0, InfRoots},
+    double test[3][] {{0, 0, 0, 0, 0, InfRoots},
                        {1, 5, 6, -2, -3, 2},
                        {12, 4, 5, 0, 0, 0}} ;
 
@@ -113,7 +113,7 @@ void unitest ()
 
     int i = 0, N =0 ;
 
-    for (i = 0 ; i < 1 ; i++ )
+    for (i = 0 ; i < 3 ; i++ )
     {
         N = Solve_Square (test[i][0], test[i][1], test[i][2], &temp1, &temp2);
         if ( (  N != test[i][5] )  || (temp1 != test[i][3]) || (temp2 != test[i][4]) )
