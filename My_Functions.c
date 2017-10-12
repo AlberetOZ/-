@@ -66,42 +66,6 @@ const char* My_strstr(const char* str, const char* find)
 }
 
 
-char* My_strtok_NULL_pointer = NULL;
-
-
-char* My_strtok(char* str, const char* del)
-{
-	int i = 0;
-	if(*str != NULL)
-	{
-		for (; My_strstr(del, &str[i]) == 0; i++)
-		{
-		}
-		str[i] = '\0';
-		My_strtok_NULL_pointer = &str[i+1];
-		return str;
-	}
-	else
-	{
-		assert(My_strtok_NULL_pointer != NULL);
-	
-		str = My_strtok_NULL_pointer;
-		for (; My_strstr(del, &str[i]) == 0; i++)
-		{
-		}
-		str[i] = '\0';
-		My_strtok_NULL_pointer = &str[i+1];
-		return str;
-
-	}
-
-
-
-
-}
-
-
-
 
 int main()
 {
@@ -118,9 +82,6 @@ int main()
 	printf("strncat = %s\n",str2);
 
 	printf("strstr = %p\n", My_strstr(str2, str1));
-
-	printf("strtok = %s     %s       %s\n", My_strtok(str2, " ,.!"), My_strtok(NULL, " ,.!"),  My_strtok(NULL, " ,.!") );
-
-    
- return 0;   
+ 	
+	return 0;   
 }
