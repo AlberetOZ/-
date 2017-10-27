@@ -4,6 +4,7 @@
 #include <assert.h>
 #define MAX_STRINGS 1024
 #define MAX_SYMBOLS 128
+#define RUS_MOVE 100
 
 int compar(const void* a, const void* b)
 {
@@ -13,7 +14,7 @@ int compar(const void* a, const void* b)
 	for(; ((char*)a)[i] >= 0; i--);
 	for(; ((char*)b)[j] >=0; j--);
 		
-	return ((char*)a)[i] +  100*(((char*)a)[i-1] + 48) - ((char*)b)[j]  - 100*(((char*)b)[j-1] + 48) ;
+	return ((char*)a)[i] +  RUS_MOVE*(((char*)a)[i-1] + 48) - ((char*)b)[j]  - RUS_MOVE*(((char*)b)[j-1] + 48) ;
 
 
 
