@@ -9,14 +9,16 @@
 
 int compar(const void* a, const void* b)
 {
-	int i = 0, j = 0;
+	int i = 0, j = 0, k = 0;
 	i = strlen((char*)a);
 	j = strlen((char*)b);
 	for(; ((char*)a)[i] >= 0; i--);
 	for(; ((char*)b)[j] >=0; j--);
-		
-	return ((char*)a)[i] +  RUS_MOVE*(((char*)a)[i-1] + RUS_POINT_CHANGE) - ((char*)b)[j]  - RUS_MOVE*(((char*)b)[j-1] + RUS_POINT_CHANGE) ;
-
+	
+	for(; (((char*)a)[i-k] +  RUS_MOVE*(((char*)a)[i-1-k] + RUS_POINT_CHANGE) - ((char*)b)[j-k]  - RUS_MOVE*(((char*)b)[j-1-k] + RUS_POINT_CHANGE)) == 0; k += 2);
+	
+	return ((char*)a)[i-k] +  RUS_MOVE*(((char*)a)[i-1-k] + RUS_POINT_CHANGE) - ((char*)b)[j-k]  - RUS_MOVE*(((char*)b)[j-1-k] + RUS_POINT_CHANGE) ;
+	
 
 
 
