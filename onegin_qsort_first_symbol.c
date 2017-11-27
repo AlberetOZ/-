@@ -7,7 +7,12 @@
 
 int compar(const void* a, const void* b)
 {
-	return ((char*)a)[1] - ((char*)b)[1];
+	int j = 0;
+	while((char*)a[j] == (char*)b[j])
+	{
+		j++;	
+	}
+	return ((char*)a)[j] - ((char*)b)[j];
 
 
 
