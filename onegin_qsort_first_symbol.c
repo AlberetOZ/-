@@ -8,7 +8,7 @@
 int compar(const void* a, const void* b)
 {
 	int j = 0;
-	while((char*)a[j] == (char*)b[j])
+	while(((char*)a)[j] == ((char*)b)[j])
 	{
 		j++;	
 	}
