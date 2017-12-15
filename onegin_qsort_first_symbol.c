@@ -23,7 +23,7 @@ int compar(const void* a, const void* b)
 
 int main() {
 	int i = 0, j = 0;
-	char str[MAX_STRINGS][MAX_SYMBOLS];
+	char str[MAX_STRINGS][MAX_SYMBOLS] = {0};
 	FILE *input, *output;
         input = fopen ("input","r");
         output = fopen ("output","w");
